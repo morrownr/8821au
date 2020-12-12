@@ -2,7 +2,7 @@
 
 ### Linux Driver for the RealTek RTL8811AU and RTL8821AU Chipsets
 
-- Driver Version: v5.8.2.3 (Realtek) (2020-04-01)
+- Version: 5.8.2.3 (Realtek) (2020-04-01)
 - Plus updates from the Linux community
 
 ### Features:
@@ -64,15 +64,11 @@
 
 ### Tested Hardware:
 
-- EDUP EP-1651 WiFi Adapter 650 Mbps USB 2.0 Nano Adapter (AC650):
-  https://www.amazon.com/gp/product/B0872VF2D8
+- Pending
 
 ### Compatible Devices:
 
-* EDUP EP-1651
-* D-Link - DWA-171C
-* TOTOLINK A650UA v3
-* Numerous additional products that are based on the supported chipsets
+* Numerous products that are based on the supported chipsets
 
 ### Installation Information:
 
