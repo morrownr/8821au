@@ -2,7 +2,7 @@
 
 ### Linux Driver for the RealTek RTL8811AU and RTL8821AU Chipsets
 
-- Version: 5.8.2.3 (Realtek) (2020-04-01)
+- v5.8.2.3 (Realtek) (2020-04-01)
 - Plus updates from the Linux community
 
 ### Features:
@@ -31,7 +31,7 @@
 - Log level control
 - LED control
 - Power saving control
-- VHT control ( to allow 80 MHz channel width in AP mode)
+- VHT control (allows 80 MHz channel width in AP mode)
 
 ### Compatible CPUs:
 
@@ -67,6 +67,8 @@
 - Pending
 
 ### Compatible Devices:
+
+Note: Some adapter makers change the chipsets in their products while keeping the same model number so please check to confirm that the product you plan to buy has the chipset you are expecting.
 
 * Numerous products that are based on the supported chipsets
 
@@ -150,8 +152,6 @@ Step 10: Reboot:
 ```
 $ sudo reboot
 ```
-Note: The installation is complete.
-
 
 ### Removal of the Driver:
 
@@ -232,22 +232,14 @@ The driver options are as follows:
 
  -----
 
- Notes:
- - To turn power saving off, set the two options below to 0.
- - These options may be useful in server setups and also if dropouts are experienced.
-
- Power saving options: ( rtw_power_mgnt )
+  Power saving options: ( rtw_power_mgnt )
 ```
  0 = Disable power saving
  1 = Power saving on, minPS (default)
  2 = Power saving on, maxPS
 ```
+ Note: 0 may be useful in unattended server setups or if dropouts are experienced.
 
- IPS mode options: ( rtw_ips_mode )
-```
- 0 = Low power
- 1 = High power (default)
-```
  -----
 
 ### Entering Monitor Mode with 'iw' and 'ip':
