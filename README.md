@@ -1,3 +1,4 @@
+### >>> This driver is currently broken. I am working on it and will remove this message when it is read <<<
 ### 8821au ( 8821au.ko )
 
 ### Linux Driver for the RealTek RTL8811AU and RTL8821AU Chipsets
