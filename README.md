@@ -65,12 +65,14 @@
 
 ### Tested Hardware:
 
-- Pending
+- Alfa AWUS036ACS 802.11ac AC600 Wi-Fi Wireless Network Adapter: 
+  https://www.amazon.com/gp/product/B0752CTSGD
 
 ### Compatible Devices:
 
 Note: Some adapter makers change the chipsets in their products while keeping the same model number so please check to confirm that the product you plan to buy has the chipset you are expecting.
 
+* Alfa AWUS036ACS
 * Numerous products that are based on the supported chipsets
 
 ### Installation Information:
