@@ -1,7 +1,3 @@
-### >>> This driver is currently working well with kernels up to and including 5.4. <<<
-### >>> I had to revert the patching for kernel 5.8 after discoving a bug. <<<
-### >>> All other drivers on this site work with kernels up to and including 5.10 <<<
-
 ### 8821au ( 8821au.ko )
 
 ### Linux Driver for the RealTek RTL8811AU and RTL8821AU Chipsets
@@ -45,7 +41,7 @@
 ### Compatible Kernels:
 
 - Kernels: 2.6.24 - 5.1 (Realtek)
-- Kernels: 5.2 - 5.4
+- Kernels: 5.2 - 5.10
 
 ### Tested Linux Distributions:
 
@@ -53,9 +49,11 @@
 
 - LMDE 4 (Linux Mint based on Debian) (kernel 4.19)
 
+- Linux Mint 20.1 beta (Linux Mint based on Ubuntu) (mainline kernel 5.10)
 - Linux Mint 20 (Linux Mint based on Ubuntu) (kernel 5.4)
 - Linux Mint 19.3 (Linux Mint based on Ubuntu) (kernel 5.4)
 
+- Ubuntu 20.10 (kernel 5.8)
 - Ubuntu 20.04 (kernel 5.4)
 - Ubuntu 18.04 (kernel 5.4)
 
