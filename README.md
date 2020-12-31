@@ -73,6 +73,16 @@
 Note: Some adapter makers change the chipsets in their products while keeping the same model number so please check to confirm that the product you plan to buy has the chipset you are expecting.
 
 * Alfa AWUS036ACS
+* Buffalo WI-U2-433DHP
+* Edimax EW-7811UTC
+* Edimax EW-7811UAC
+* Edimax EW-7811UCB
+* ELECOM WDC-433DU2H
+* GMYLE - AC450
+* Netgear A6100
+* Planex GW-450S
+* TP Link T2U Nano
+* TP Link T2U Plus
 * Numerous products that are based on the supported chipsets
 
 ### Installation Information:
