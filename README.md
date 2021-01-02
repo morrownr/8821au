@@ -45,23 +45,29 @@
 
 ### Tested Linux Distributions:
 
-- Raspberry Pi OS (12-02-2020) (ARM 32 bit) (kernel 5.4)
+- Arch Linux (kernel 5.4)
+- Arch Linux (kernel 5.9)
+
+- Linux Mint 20 (Linux Mint based on Ubuntu) (kernel 5.4)
+- Linux Mint 19.3 (Linux Mint based on Ubuntu) (kernel 5.4)
 
 - LMDE 4 (Linux Mint based on Debian) (kernel 4.19)
 
-- Linux Mint 20.1 beta (Linux Mint based on Ubuntu) (mainline kernel 5.10)
-- Linux Mint 20 (Linux Mint based on Ubuntu) (kernel 5.4)
-- Linux Mint 19.3 (Linux Mint based on Ubuntu) (kernel 5.4)
+- Manjaro 20.1 (kernel 5.9)
 
 - Ubuntu 20.10 (kernel 5.8)
 - Ubuntu 20.04 (kernel 5.4)
 - Ubuntu 18.04 (kernel 5.4)
 
+- Raspberry Pi OS (12-02-2020) (ARM 32 bit) (kernel 5.4)
+
 ### Download Locations for Tested Linux Distributions:
 
+- Arch Linux - https://www.archlinux.org/
+- Linux Mint - https://www.linuxmint.com/
+- Manjaro - https://manjaro.org/
 - Raspberry Pi OS - https://www.raspberrypi.org/
-- Linux Mint - https://linuxmint.com/
-- Ubuntu - https://ubuntu.com/
+- Ubuntu - https://www.ubuntu.com/
 
 ### Tested Hardware:
 
@@ -89,9 +95,9 @@ Note: Some adapter makers change the chipsets in their products while keeping th
 
 The installation instructions that are provided are for the novice user. Experienced users are welcome to alter the installation to meet their needs.
 
-The installation instructions require that your system has access to the internet. There are numerous ways to enable temporary internet access depending on your hardware and situation. One method is to use tethering from a phone. Another method is to keep an ultra cheap adapter in your toolkit that uses an in-kernel (plug and play) driver. Here is one: https://www.canakit.com/raspberry-pi-wifi.html.
+The installation instructions require that your system has access to the internet. There are numerous ways to enable temporary internet access depending on your hardware and situation. One method is to use tethering from a phone. Another method is to keep an ultra cheap adapter in your toolkit that uses an in-kernel (plug and play) driver. Here is one: https://www.canakit.com/raspberry-pi-wifi.html
 
-The installation instructions require the use of the terminal. The quick way to open a terminal: Ctrl+Alt+T (hold down on the Ctrl and Alt keys then press the T key).
+The installation instructions require the use of the terminal. The quick way to open a terminal: Ctrl+Alt+T (hold down on the Ctrl and Alt keys then press the T key)
 
 The installation instructions make use of DKMS. DKMS is a system utility which will automatically recompile and install this kernel module when a new kernel is installed. DKMS is provided by and maintained by Dell.
 
@@ -101,9 +107,15 @@ It is recommended that you do not delete the driver directory after installation
 
 Step 1: Open a terminal (Ctrl+Alt+T)
 
-Step 2: Update the system:
+Step 2: Update the system (select the option for the OS you are using):
+
+Option for all Debian based distributions such as Ubuntu, Linux Mint and the Raspberry Pi OS:
 ```bash
 $ sudo apt-get update
+```
+Option for Arch-based distributions such as Manjaro:
+```bash
+$ sudo pacman -Syu
 ```
 Step 3: Install the required packages (select the option for the OS you are using):
 
@@ -115,11 +127,11 @@ Option for LMDE (Debian based):
 ```bash
 $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git
 ```
-Option for Linux Mint (Ubuntu based) or Ubuntu (all flavors):
+Option for Linux Mint or Ubuntu (all flavors):
 ```bash
 $ sudo apt-get install -y dkms git
 ```
-Option for Arch-based distributions (Manjaro):
+Option for Arch-based distributions such as Manjaro:
 ```bash
 $ sudo pacman -S --noconfirm linux-headers dkms git
 ```
@@ -141,16 +153,16 @@ Step 7: Move to the newly created driver directory:
 ```bash
 $ cd ~/src/8821au
 ```
-Step 8: Run a preparation script if needed:
+Step 8: Run a preparation script if required:
 
-The Raspberry Pi OS requires a preparation script.
+Note: The Raspberry Pi OS and other ARM based systems require a preparation script.
 
-For 32 bit Raspberry Pi OS: (Please skip this step if you are not installing to Raspberry Pi 32 bit)
+Option for 32 bit Raspberry Pi OS:
 ```bash
 $ sudo ./raspi32.sh
 
 ```
-For 64 bit Raspberry Pi OS: (Please skip this step if you are not installing to Raspberry Pi 64 bit)
+Option for 64 bit Raspberry Pi OS or 64 bit Ubuntu 20.10 for Raspberry Pi:
 ```bash
 $ sudo ./raspi64.sh
 
