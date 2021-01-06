@@ -28,7 +28,6 @@ Change driver options:
 $ sudo nano /etc/modprobe.d/8821au.conf
 
 rtw_vht_enable=2
-rtw_switch_usb_mode=1 (only for USB 3 capable adapters)
 
 -----
 
