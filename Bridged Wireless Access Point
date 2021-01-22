@@ -1,6 +1,11 @@
 Bridged Wireless Access Point
 
-2021-01-06
+For wireless adapters based on the following chipsets:
+
+rtl8811au
+rtl8821au
+
+2021-01-22
 
 Tested setup:
 
@@ -8,10 +13,14 @@ Raspberry Pi 4B (4gb)
 Raspberry Pi OS (12-02-20) (32 bit)
 Driver: github.com/morrownr/8821au.git
 Onboard WiFi disabled
-Ethernet connection
+Ethernet connection providing internet
 USB WiFi Adapter based on the rtl8811au chipset
 
 Steps:
+
+Install the driver for the WiFi adapter.
+
+-----
 
 Optional: Disable Raspberry Pi onboard WiFi:
 
@@ -27,7 +36,7 @@ Change driver options:
 
 $ sudo nano /etc/modprobe.d/8821au.conf
 
-rtw_vht_enable=2
+rtw_vht_enable=2      (enable 80 Mhz channel width)
 
 -----
 
@@ -98,36 +107,47 @@ Add:
 interface=wlan0
 bridge=br0
 driver=nl80211
+ctrl_interface=/var/run/hostapd
+ctrl_interface_group=0
 
 ssid=pi
+wpa_passphrase=raspberry
+
 country_code=US
 ieee80211d=1
 ieee80211h=1
 
+#2g
+#hw_mode=g
+#channel=7
+
 #5g
 hw_mode=a
 channel=36
+#channel=149
 
 macaddr_acl=0
 auth_algs=1
 ignore_broadcast_ssid=0
 wmm_enabled=1
-
 wpa=2
-wpa_passphrase=raspberry
 wpa_key_mgmt=WPA-PSK
-wpa_pairwise=TKIP
+#wpa_pairwise=TKIP
 rsn_pairwise=CCMP
 
 ##### IEEE 802.11n related configuration #####
 ieee80211n=1
-ht_capab=[HT40-][HT40+][SHORT-GI-20][SHORT-GI-40][MAX-AMSDU-7935]
+# 8811au
+ht_capab=[HT40+][SHORT-GI-20][SHORT-GI-40][MAX-AMSDU-7935][DSSS_CCK-40]
 
 ##### IEEE 802.11ac related configuration #####
 ieee80211ac=1
-vht_capab=[MAX-MPDU-11454][SHORT-GI-80][HTC-VHT]
+# 8811au
+vht_capab=[MAX-A-MPDU-LEN-EXP3][MAX-MPDU-11454][SHORT-GI-80][HTC-VHT]
+
 vht_oper_chwidth=1
 vht_oper_centr_freq_seg0_idx=42
+#vht_oper_centr_freq_seg0_idx=155
 
 #
 ## end of hostapd.conf
