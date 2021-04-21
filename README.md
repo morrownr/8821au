@@ -203,9 +203,9 @@ Run a preparation script
 
     $ sudo ./raspi64.sh
 ```
-Step 9: Run the installation script
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option) 
 ```bash
-$ sudo ./install-driver.sh
+$ sudo ./install-driver.sh [NoPrompt]
 ```
 Step 10: Reboot
 ```bash
