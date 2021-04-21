@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT_NAME="install-driver.sh"
-SCRIPT_VERSION="20210420"
+SCRIPT_VERSION="20210421"
 
 DRV_NAME="rtl8821au"
 DRV_VERSION="5.8.2.3"
@@ -13,7 +13,7 @@ KRNL_VERSION="$(uname -r)"
 NO_PROMPT=0
 
 clear
-echo "${SCRIPT_NAME} version ${SCRIPT_VERSION}"
+echo "Running: ${SCRIPT_NAME} version ${SCRIPT_VERSION}"
 
 # Get the options
 while [ $# -gt 0 ]; do
@@ -22,8 +22,8 @@ while [ $# -gt 0 ]; do
 			NO_PROMPT=1 ;;
 		*h|*help|*)
 			echo "Syntax $0 <NoPrompt>"
-			echo "       NoPrompt - stops asking for config info, doesn't reboot"
-			echo "       help|h   - Show options"
+			echo "       NoPrompt - noninteractive mode"
+			echo "       -h|--help - Show help"
 			exit 1
 			;;
 	esac
