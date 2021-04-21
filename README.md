@@ -37,7 +37,7 @@
 - VHT control (allows 80 MHz channel width in AP mode)
 
 Note: WPA3-AES does not work. If you need a comparable adapter that does support
-WPA3-AES, I suggest an Alfa AWUS036ACM (mt7612u chipset) or a Alfa AWUS036ACHM 
+WPA3-AES, I suggest an Alfa AWUS036ACM (mt7612u chipset) or a Alfa AWUS036ACHM
 (mt7610u chipset). You can get more information and links to these adapters at
 the following site:
 
@@ -97,10 +97,6 @@ https://github.com/morrownr/USB-WiFi
 
 ### Compatible Devices
 
-Warning: Beware of "multi-state" USB WiFi adapters. Some USB WiFi adapters have proprietary Windows drivers onboard. When plugged in, they act like a flash drive or CDROM and on Windows will attempt to start installing the Windows driver. That won't work on Linux or MAC or any other non-Windows OS so the adapter sits there in flash drive or CDROM mode. The problem is that the state of the adapter has to be changed for the adapter to show up as the device that you expect, in this case, a WiFi adapter. Most modern Linux distributions ship with a utility called "usb-modeswitch" that will handle this issue for you if it has the correct information for your adapter. It is a good utility but if you buy adapters that are "multi-state," that is one more potential headache you may have to deal with when something goes wrong. Often you can indentify adapters that are "multi-state" as they are advertised as "free driver" or "free installation driver." If you are looking to buy a USB WiFi adapter for use on Linux, MAC OS, *NIX or anything besides Windows, it is a good idea to seek out single-state adapters.
-
-Note: Some adapter makers change the chipsets in their products while keeping the same model number so please check to confirm that the product you plan to buy has the chipset you are expecting.
-
 * Alfa AWUS036ACS
 * Buffalo WI-U2-433DHP
 * Edimax EW-7811UTC
@@ -113,6 +109,11 @@ Note: Some adapter makers change the chipsets in their products while keeping th
 * TP Link T2U Nano
 * TP Link T2U Plus
 * Numerous products that are based on the supported chipsets
+
+Warning: Beware of "multi-state" USB WiFi adapters. Some USB WiFi adapters have proprietary Windows drivers onboard. When plugged in, they act like a flash drive or CDROM and on Windows will attempt to start installing the Windows driver. That won't work on Linux or MAC or any other non-Windows OS so the adapter sits there in flash drive or CDROM mode. The problem is that the state of the adapter has to be changed for the adapter to show up as the device that you expect, in this case, a WiFi adapter. Most modern Linux distributions ship with a utility called "usb-modeswitch" that will handle this issue for you if it has the correct information for your adapter. It is a good utility but if you buy adapters that are "multi-state," that is one more potential headache you may have to deal with when something goes wrong. Often you can indentify adapters that are "multi-state" as they are advertised as "free driver" or "free installation driver." If you are looking to buy a USB WiFi adapter for use on Linux, MAC OS, *NIX or anything besides Windows, it is a good idea to seek out single-state adapters.
+
+Note: Some adapter makers change the chipsets in their products while keeping the same model number so please check to confirm that the product you plan to buy has the chipset you are expecting.
+
 
 ### Installation Information
 
@@ -204,7 +205,7 @@ Run a preparation script
 
     $ sudo ./raspi64.sh
 ```
-Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option) 
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
 ```bash
 $ sudo ./install-driver.sh [NoPrompt]
 ```
