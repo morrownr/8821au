@@ -16,7 +16,8 @@ clear
 echo "Running: ${SCRIPT_NAME} version ${SCRIPT_VERSION}"
 
 # Get the options
-while [ $# -gt 0 ]; do
+while [ $# -gt 0 ]
+do
 	case $1 in
 		NoPrompt)
 			NO_PROMPT=1 ;;
@@ -86,7 +87,8 @@ fi
 
 echo "The driver was installed successfully."
 
-if [ $NO_PROMPT -ne 1 ]; then
+if [ $NO_PROMPT -ne 1 ]
+then
 	read -p "Do you want to edit the driver options file now? [y/n] " -n 1 -r
 	echo    # move to a new line
 	if [[ $REPLY =~ ^[Yy]$ ]]
