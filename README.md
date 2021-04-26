@@ -36,8 +36,8 @@
 - Power saving control
 - VHT control (allows 80 MHz channel width in AP mode)
 
-Note: WPA3-AES does not work. If you need a comparable adapter that does support
-WPA3-AES, I suggest an Alfa AWUS036ACM (mt7612u chipset) or a Alfa AWUS036ACHM
+Note: WPA3 does not work. If you need a comparable adapter that does support
+WPA3, I suggest an Alfa AWUS036ACM (mt7612u chipset) or a Alfa AWUS036ACHM
 (mt7610u chipset). You can get more information and links to these adapters at
 the following site:
 
@@ -114,7 +114,6 @@ Warning: Beware of "multi-state" USB WiFi adapters. Some USB WiFi adapters have 
 
 Note: Some adapter makers change the chipsets in their products while keeping the same model number so please check to confirm that the product you plan to buy has the chipset you are expecting.
 
-
 ### Installation Information
 
 The installation instructions are for the novice user. Experienced users are welcome to alter the installation to meet their needs.
@@ -128,6 +127,8 @@ You will need to use the terminal interface. The quick way to open a terminal: C
 DKMS is used for the installation. DKMS is a system utility which will automatically recompile and install this driver when a new kernel is installed. DKMS is provided by and maintained by Dell.
 
 It is recommended that you do not delete the driver directory after installation as the directory contains information and scripts that you may need in the future.
+
+Note: There is no need to disable Secure Mode to install this driver. If Secure Mode is properly setup on your system, this installation will support it.
 
 ### Installation Steps
 
