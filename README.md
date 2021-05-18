@@ -17,32 +17,38 @@
 - IEEE 802.11b/g/n/ac Client mode
   * Support wireless security for WEP, WPA TKIP and WPA2 AES PSK
   * Support site survey scan and manual connect
-  * Support WPA/WPA2 TLS client
   * Support power saving mode
-- Soft AP mode
+- WiFi-Direct
 - Wake on WLAN
 - Supported interface modes:
   * IBSS
-  * Managed (client)
+  * Managed
   * AP (see *Bridged Wireless Access Point* located in the main directory of this repo)
   * Monitor (see *Monitor_Mode.md* located in the main directory of this repo)
   * P2P-client
   * P2P-GO
+- Supported extended features: None
 - Log level control
 - LED control
 - Power saving control
 - VHT control (allows 80 MHz channel width in AP mode)
 
-Note: WPA3 does not work. If you need a comparable adapter that does support
-WPA3, I suggest an Alfa AWUS036ACM (mt7612u chipset) or a Alfa AWUS036ACHM
-(mt7610u chipset). You can get more information and links to these adapters at
-the following site:
+FAQ:
+
+Question: Does WPA3 work with this driver?
+
+Answer: No, WPA3 does not work with this driver. If you need a comparable adapter
+that does support WPA3, I suggest an Alfa AWUS036ACM (mt7612u chipset) or a
+Alfa AWUS036ACHM (mt7610u chipset). You can get more information and links to
+these adapters at the following site:
 
 https://github.com/morrownr/USB-WiFi
 
-Note: Realtek out-of-kernel drivers, including this driver, do not support
-interface combinations. If you need support for interface combinations, I
-suggest adapters based on the Mediatek mt7612u and mt7610u chipsets. You can
+Question: What interface combination does this driver support?
+
+Answer: None. Realtek out-of-kernel drivers, including this driver, do not
+support interface combinations. If you need support for interface combinations,
+I suggest adapters based on the Mediatek mt7612u and mt7610u chipsets. You can
 get more information and links at the following site:
 
 https://github.com/morrownr/USB-WiFi
@@ -277,6 +283,13 @@ The driver options are as follows
  -----
 
 ### Removal of the Driver
+
+Note: This script should be used in the following situations:
+
+- the driver is no longer needed
+- a fresh start with default settings is needed
+- a new version of the driver needs to be installed
+- a major operating system upgrade is going to be applied
 
 Step 1: Open a terminal (Ctrl+Alt+T)
 
