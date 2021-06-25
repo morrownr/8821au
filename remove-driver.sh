@@ -7,7 +7,7 @@ DRV_NAME="rtl8821au"
 DRV_VERSION="5.8.2.3"
 OPTIONS_FILE="8821au.conf"
 
-DRV_DIR="$(pwd)"
+DRV_DIR="~/src/8821au"
 
 if [[ $EUID -ne 0 ]]
 then
