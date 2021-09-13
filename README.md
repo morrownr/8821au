@@ -20,8 +20,8 @@
 - Supported interface modes:
   * IBSS
   * Managed
-  * AP (see *Bridged Wireless Access Point* located in the main directory of this repo)
-  * Monitor (see *Monitor_Mode.md* located in the main directory of this repo)
+  * AP
+  * Monitor
   * P2P-client
   * P2P-GO
 - Log level control
@@ -29,32 +29,7 @@
 - Power saving control
 - VHT control (allows 80 MHz channel width in AP mode)
 
-FAQ:
-
-Question: Does WPA3 work with this driver?
-
-Answer: No, WPA3 does not work with this driver. If you need a comparable adapter
-that does support WPA3, I suggest an Alfa AWUS036ACM (mt7612u chipset) or a
-Alfa AWUS036ACHM (mt7610u chipset). You can get more information and links to
-these adapters at the following site:
-
-https://github.com/morrownr/USB-WiFi
-
-Question: What interface combinations does this driver support?
-
-Answer: None. Realtek out-of-kernel drivers, including this driver, do not
-support interface combinations. If you need support for interface combinations,
-I suggest adapters based on the Mediatek mt7612u and mt7610u chipsets. You can
-get more information and links at the following site:
-
-https://github.com/morrownr/USB-WiFi
-
-Question: What extended features does this driver support?
-
-Answer: None. For extended features, you need an adapter that uses Mediatek
-drivers. You can get more information and links at the following site:
-
-https://github.com/morrownr/USB-WiFi
+A FAQ is available at the end of this document.
 
 ### Compatible CPUs
 
@@ -64,7 +39,7 @@ https://github.com/morrownr/USB-WiFi
 ### Compatible Kernels
 
 - Kernels: 2.6.24 - 5.1 (Realtek)
-- Kernels: 5.2 - 5.12
+- Kernels: 5.2 - 5.15
 
 ### Tested Linux Distributions
 
@@ -73,20 +48,18 @@ https://github.com/morrownr/USB-WiFi
 
 - Fedora (kernel 5.11)
 
-- Linux Mint 20.1 (Linux Mint based on Ubuntu) (kernel 5.4)
+- Linux Mint 20.2 (Linux Mint based on Ubuntu) (kernel 5.11)
 - Linux Mint 20   (Linux Mint based on Ubuntu) (kernel 5.4)
-- Linux Mint 19.3 (Linux Mint based on Ubuntu) (kernel 5.4)
 
 - LMDE 4 (Linux Mint based on Debian) (kernel 4.19)
 
 - Manjaro 20.1 (kernel 5.9)
 
 - Raspberry Pi OS (2021-01-11) (ARM 32 bit) (kernel 5.10)
-- Raspberry Pi Desktop (x86 32 bit) (kernel 4.9)
+- Raspberry Pi Desktop (x86 32 bit) (kernel 4.19)
 
-- Ubuntu 20.10 (kernel 5.8)
+- Ubuntu 21.04 (kernel 5.11)
 - Ubuntu 20.04 (kernel 5.4)
-- Ubuntu 18.04 (kernel 5.4)
 
 ### Download Locations for Tested Linux Distributions
 
@@ -124,9 +97,7 @@ Note: Some adapter makers change the chipsets in their products while keeping th
 
 The installation instructions are for the novice user. Experienced users are welcome to alter the installation to meet their needs.
 
-Temporary internet access is required for installation. There are numerous ways to enable temporary internet access depending on your hardware and situation. [One method is to use tethering from a phone.](https://www.makeuseof.com/tag/how-to-tether-your-smartphone-in-linux)
-
-Another method to enable temporary internet access is to keep a [wifi adapter that uses an in-kernel driver](https://github.com/morrownr/USB-WiFi) in your toolkit.
+Temporary internet access is required for installation. There are numerous ways to enable temporary internet access depending on your hardware and situation. [One method is to use tethering from a phone.](https://www.makeuseof.com/tag/how-to-tether-your-smartphone-in-linux). Another method to enable temporary internet access is to keep a [wifi adapter that uses an in-kernel driver](https://github.com/morrownr/USB-WiFi) in your toolkit.
 
 You will need to use the terminal interface. The quick way to open a terminal: Ctrl+Alt+T (hold down on the Ctrl and Alt keys then press the T key)
 
@@ -134,7 +105,7 @@ DKMS is used for the installation. DKMS is a system utility which will automatic
 
 It is recommended that you do not delete the driver directory after installation as the directory contains information and scripts that you may need in the future.
 
-Note: There is no need to disable Secure Mode to install this driver. If Secure Mode is properly setup on your system, this installation will support it.
+There is no need to disable Secure Mode to install this driver. If Secure Mode is properly setup on your system, this installation will support it.
 
 ### Installation Steps
 
@@ -144,7 +115,7 @@ Step 2: Update the system (select the option for the OS you are using)
 ```
     Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and the Raspberry Pi OS
 
-    $ sudo apt-get update
+    $ sudo apt update
 ```
 ```
     Option for Arch based distributions such as Manjaro
@@ -160,24 +131,32 @@ Step 3: Install the required packages (select the option for the OS you are usin
 ```
     Option for Raspberry Pi OS
 
-    $ sudo apt-get install -y raspberrypi-kernel-headers bc build-essential dkms git
+    $ sudo apt install -y raspberrypi-kernel-headers bc build-essential dkms git
 ```
 ```
     Option for Debian, Kali or Linux Mint Debian Edition (LMDE)
 
-    $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
+    $ sudo apt install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
 ```
 ```
     Option for Ubuntu (all flavors) or Linux Mint
 
-    $ sudo apt-get install -y dkms git
+    $ sudo apt install -y dkms git
 ```
 ```
-    Option for Arch or Manjaro
+    Options for Arch or Manjaro
+
+    1) if using pacman
 
     $ sudo pacman -S --noconfirm linux-headers dkms git
 ```
-Note regarding Arch and Manjaro: if you are asked to choose a provider, make sure to choose the one that corresponds to your version of the linux kernel (for example, ```linux510-headers``` for Linux kernel version 5.10) if you install the incorrect version, you'll have to uninstall it and reinstall the correct version.
+Note: If you are asked to choose a provider, make sure to choose the one that corresponds to your version of the linux kernel (for example, ```linux510-headers``` for Linux kernel version 5.10) if you install the incorrect version, you'll have to uninstall it and reinstall the correct version.
+```
+    2) if using an AUR helper like paru or yay
+
+    $ paru -S rtl8814au-dkms-git
+```
+Note: Make sure to uninstall any existing driver installations from other installation method. If the installation fails and its cause is related to AUR's BUILDPKG script, please address the issue first to the package maintainer at https://aur.archlinux.org/packages/rtl8814au-dkms-git/.
 
 ```
     Option for Fedora
@@ -214,7 +193,7 @@ Run a preparation script
 
     $ ./raspi64.sh
 ```
-Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
+Step 9: Run the installation script (For automated builds, use _NoPrompt_ as an option)
 ```bash
 $ sudo ./install-driver.sh [NoPrompt]
 ```
@@ -245,6 +224,10 @@ Note: This script should be used in the following situations:
 - a fresh start with default settings is needed
 - a new version of the driver needs to be installed
 - a major operating system upgrade is going to be applied
+
+Note: This script removes everything that has been installed, with the exception
+of the packages installed in Step 3 and the driver directory. The driver directory
+can and probably should be deleted in most cases after running the script.
 
 Step 1: Open a terminal (Ctrl+Alt+T)
 
