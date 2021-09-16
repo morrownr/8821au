@@ -1,5 +1,10 @@
 ##### [Click for USB WiFi Adapter Information for Linux](https://github.com/morrownr/USB-WiFi)
 
+News: I have been able to locate a new version of this driver that has many updates to include
+support for WPA3. I will start the process of making it available soon but it will take a lot
+of work as there have been many changes in the source code and some of the features that I have
+added to this driver are not in the new version.
+
 -----
 
 ### 8821au ( 8821au.ko ) :rocket:
