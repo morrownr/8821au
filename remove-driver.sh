@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT_NAME="remove-driver.sh"
-SCRIPT_VERSION="20210626"
+SCRIPT_VERSION="20210917"
 
 DRV_NAME="rtl8821au"
 DRV_VERSION="5.8.2.3"
@@ -14,7 +14,7 @@ then
 	exit 1
 fi
 
-echo "Starting removal."
+echo "Starting removal..."
 
 dkms remove -m ${DRV_NAME} -v ${DRV_VERSION} --all
 RESULT=$?
@@ -29,14 +29,14 @@ then
 	echo "Deleting source files from /usr/src/${DRV_NAME}-${DRV_VERSION}"
 	rm -rf /usr/src/${DRV_NAME}-${DRV_VERSION}
 	echo "The driver was removed successfully."
-	echo "You may now delete the driver directory if desired."
+	echo "Info: You may now delete the driver directory if desired."
 else
 	echo "An error occurred. dkms remove error = ${RESULT}"
 	echo "Please report this error."
 	exit $RESULT
 fi
 
-read -p "Are you ready to reboot now? [y/n] " -n 1 -r
+read -p "Are you ready to reboot now? [y/N] " -n 1 -r
 echo    # move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then

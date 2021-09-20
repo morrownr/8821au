@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT_NAME="install-driver.sh"
-SCRIPT_VERSION="20210524"
+SCRIPT_VERSION="20210917"
 
 DRV_NAME="rtl8821au"
 DRV_VERSION="5.8.2.3"
@@ -48,7 +48,7 @@ then
 	exit 1
 fi
 
-echo "Starting installation."
+echo "Starting installation..."
 # the add command requires source in /usr/src/${DRV_NAME}-${DRV_VERSION}
 echo "Copying source files to: /usr/src/${DRV_NAME}-${DRV_VERSION}"
 cp -rf "${DRV_DIR}" /usr/src/${DRV_NAME}-${DRV_VERSION}
@@ -89,14 +89,14 @@ echo "The driver was installed successfully."
 
 if [ $NO_PROMPT -ne 1 ]
 then
-	read -p "Do you want to edit the driver options file now? [y/n] " -n 1 -r
+	read -p "Do you want to edit the driver options file now? [y/N] " -n 1 -r
 	echo    # move to a new line
 	if [[ $REPLY =~ ^[Yy]$ ]]
 	then
 		nano /etc/modprobe.d/${OPTIONS_FILE}
 	fi
 
-	read -p "Do you want to reboot now? [y/n] " -n 1 -r
+	read -p "Do you want to reboot now? [y/N] " -n 1 -r
 	echo    # move to a new line
 	if [[ $REPLY =~ ^[Yy]$ ]]
 	then
