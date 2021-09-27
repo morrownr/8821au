@@ -1,9 +1,10 @@
 ##### [Click for USB WiFi Adapter Information for Linux](https://github.com/morrownr/USB-WiFi)
 
-News: I have been able to locate a new version of this driver that has many updates to include
-support for WPA3. I will start the process of making it available soon but it will take a lot
-of work as there have been many changes in the source code and some of the features that I have
-added to this driver are not in the new version.
+News: A new version of this driver is now available. Testing has shown it to be a much improved
+driver over the driver here. Managed and master modes perform without known issues and performance
+is good. 
+
+[8821au-20210708](https://github.com/morrownr/8821au-20210708/blob/main/README.md)
 
 -----
 
@@ -22,7 +23,7 @@ added to this driver are not in the new version.
   * Support wireless security for WEP, WPA TKIP and WPA2 AES PSK
   * Support site survey scan and manual connect
   * Support power saving mode
-- Supported interface modes:
+- Supported interface modes
   * IBSS
   * Managed
   * AP
@@ -146,22 +147,23 @@ Step 3: Install the required packages (select the option for the OS you are usin
 ```
     Option for Ubuntu (all flavors) or Linux Mint
 
-    $ sudo apt install -y dkms git
+    $ sudo apt install -y dkms git build-essential
 ```
 ```
     Options for Arch or Manjaro
 
-    1) if using pacman
+    if using pacman
 
     $ sudo pacman -S --noconfirm linux-headers dkms git
-```
-Note: If you are asked to choose a provider, make sure to choose the one that corresponds to your version of the linux kernel (for example, ```linux510-headers``` for Linux kernel version 5.10) if you install the incorrect version, you'll have to uninstall it and reinstall the correct version.
-```
-    2) if using an AUR helper like paru or yay
 
-    $ paru -S rtl8814au-dkms-git
+    Note: If you are asked to choose a provider, make sure to choose the one that
+    corresponds to your version of the linux kernel (for example, "linux510-headers"
+    for Linux kernel version 5.10) if you install the incorrect version, you'll have
+    to uninstall it and reinstall the correct version.
+
+    if using other methods, please follow the instructions provided by those methods
+
 ```
-Note: Make sure to uninstall any existing driver installations from other installation method. If the installation fails and its cause is related to AUR's BUILDPKG script, please address the issue first to the package maintainer at https://aur.archlinux.org/packages/rtl8814au-dkms-git/.
 
 ```
     Option for Fedora
@@ -197,6 +199,9 @@ Run a preparation script
     Option for 64 bit operating systems to be installed to Raspberry Pi hardware
 
     $ ./raspi64.sh
+
+    Note: I will only address issues having to do with the 64 bit version of the
+    Raspberry Pi OS once it is out of beta and is released as generally available.
 ```
 Step 9: Run the installation script (For automated builds, use _NoPrompt_ as an option)
 ```bash
@@ -209,7 +214,7 @@ $ sudo reboot
 
 ### Driver Options
 
-A file called `8821au.conf` will be installed in `/etc/modeprob.d` by default.
+A file called `8821au.conf` will be installed in `/etc/modeprobe.d` by default.
 
 Location: `/etc/modprobe.d/8821au.conf`
 
