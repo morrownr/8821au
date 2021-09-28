@@ -2,7 +2,7 @@
 
 -----
 
-### New Driver Notice - [8821au-20210708](https://github.com/morrownr/8821au-20210708/blob/main/README.md)
+### New Driver Notice - [8821au-20210708](https://github.com/morrownr/8821au-20210708)
 
 News: A new version of this driver is now available. Testing has shown it to be a much improved
 driver over the driver here in this repo. Managed and master modes perform without known issues
