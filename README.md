@@ -1,8 +1,8 @@
 ##### [Click for USB WiFi Adapter Information for Linux](https://github.com/morrownr/USB-WiFi)
 
-News: A new version of this driver is now available. Testing has shown it to be a much improved
-driver over the driver here. Managed and master modes perform without known issues and performance
-is good. 
+News: A new version of this driver is now available. Testing has shown it to be a solid driver.
+The driver located here will be discontinued in the near future so please transition to the
+new driver as you are able to do so. 
 
 [8821au-20210708](https://github.com/morrownr/8821au-20210708/blob/main/README.md)
 
