@@ -1,9 +1,8 @@
 News: A new version of this driver is now available. Testing has shown the new
-driver to be a very solid driver in managed and master modes but additional
-testing and work is needed on monitor mode. Monitor mode works but there are
-some quirks. It may be an issue of documentation or there may need to be code
-changes. The work is ongoing. You are invited to help test and break in the new 
-driver: [8821au-20210708](https://github.com/morrownr/8821au-20210708/blob/main/README.md)
+driver to be a very solid driver that is much better than the driver here. My
+recommendation is that you use the new driver.
+
+[8821au-20210708](https://github.com/morrownr/8821au-20210708/blob/main/README.md)
 
 The plan is to discontinue this driver by the end of December 2021. This URL 
 will then be used to provide basic chipset information and a link to the new
