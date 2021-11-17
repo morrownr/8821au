@@ -10,8 +10,6 @@
 
 The location for the currently available version of the driver is as follows:
 
-[8821au-20210708](https://github.com/morrownr/8821au-20210708)
-
 https://github.com/morrownr/8821au-20210708
 
 I hope you enjoy the driver and look forward to your comments and suggestions.
